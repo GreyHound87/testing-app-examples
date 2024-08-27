@@ -54,12 +54,10 @@ const QuestionWithRadio: React.FC = () => {
   )
 }
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
   return (
     <>
       <QuestionWithRadio />
     </>
   )
 }
-
-export default App
