@@ -7,7 +7,12 @@ import {
 } from '@hh.ru/magritte-ui'
 import { Header } from './components'
 
-export const AppLayout: React.FC = ({ children }) => {
+interface AppLayoutProps {
+  // заглушка пропсов для AppLayout
+  children: React.ReactNode
+}
+
+export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
   return (
     <GridLayout>
       <GridRow>
