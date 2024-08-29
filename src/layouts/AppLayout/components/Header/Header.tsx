@@ -1,47 +1,70 @@
 import React from 'react'
 import {
-  GridLayout,
   GridRow,
   GridColumn,
   Avatar,
   Text,
   Link,
   Divider,
+  VSpacing,
 } from '@hh.ru/magritte-ui'
 import { QuestionCircleOutlinedSize16 } from '@hh.ru/magritte-ui/icon'
+import { logoFile } from './assets/logo'
 
 export const Header: React.FC = () => {
   return (
-    <GridLayout>
+    <>
+      <VSpacing default={20} />
       <GridRow>
-        <GridColumn flexibleContent xs={2} s={2} m={2} l={2} xl={2} xxl={2}>
-          <Avatar
-            fallbackMode="letters"
-            letters="AA"
-            style="color-9"
-            size={48}
-            disabled={false}
-            online={false}
-            mode="placeholder"
-            placeholder="city"
-            shapeCircle
-            aria-label="Project logo"
-          />
+        <GridColumn flexibleContent xs={1} s={2} m={2} l={2} xl={2} xxl={2}>
+          <div
+            style={{ display: 'flex', alignItems: 'center', height: '100%' }}
+          >
+            <Avatar
+              image={logoFile}
+              mode={'image'}
+              aria-label={'logo'}
+              size={48}
+              fallbackMode="letters"
+              letters="HH"
+              shapeCircle
+            />
+          </div>
         </GridColumn>
+
         <GridColumn flexibleContent xs={2} s={4} m={8} l={8} xl={8} xxl={8}>
-          <Text typography="title-1-semibold">Demo Testing App</Text>
+          <div
+            style={{ display: 'flex', alignItems: 'center', height: '100%' }}
+          >
+            <Text typography="subtitle-2-semibold" maxLines={1}>
+              Demo Testing App
+            </Text>
+          </div>
         </GridColumn>
-        <GridColumn flexibleContent xs={0} s={2} m={2} l={2} xl={2} xxl={2}>
-          <Link href="https://hh.ru" iconRight={QuestionCircleOutlinedSize16}>
-            Есть вопросы?
-          </Link>
+
+        <GridColumn flexibleContent xs={1} s={2} m={2} l={2} xl={2} xxl={2}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              height: '100%',
+              justifyContent: 'flex-end',
+            }}
+          >
+            <Link
+              element="button"
+              aria-label="Есть вопросы?"
+              iconRight={QuestionCircleOutlinedSize16}
+            />
+          </div>
         </GridColumn>
       </GridRow>
+
       <GridRow>
         <GridColumn xs={4} s={8} m={12} l={12} xl={12} xxl={12}>
           <Divider marginTop={8} marginBottom={16} />
         </GridColumn>
       </GridRow>
-    </GridLayout>
+    </>
   )
 }
