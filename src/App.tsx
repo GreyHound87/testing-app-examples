@@ -1,7 +1,7 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { Link } from '@hh.ru/magritte-ui'
-
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+/* import { Link } from '@hh.ru/magritte-ui'
+ */
 import { AppLayout } from './layouts'
 import { StartPage } from './pages'
 
@@ -11,10 +11,10 @@ import { TaskCard } from './components/TaskCard/TaskCard'
 const ResultPage = () => (
   <div>
     ResultPage Content
-    <Link href="/" style="accent" typography="label-2-regular">
+    <Link to="/">
       Link to start
     </Link>{' '}
-    <Link href="/testing" style="positive">
+    <Link to="/testing">
       Link to test
     </Link>
   </div>
