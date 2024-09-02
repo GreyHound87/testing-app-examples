@@ -38,7 +38,8 @@ export const TaskContent: React.FC<ITaskContentProps> = ({
         <div
           style={{
             aspectRatio: aspectRatio,
-            maxHeight: window.innerHeight * 0.3,
+            maxHeight: window.innerHeight * 0.25,
+            margin: "auto"
           }}
         >
           <img
