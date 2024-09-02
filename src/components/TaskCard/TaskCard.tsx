@@ -60,7 +60,7 @@ const mockTaskData: ITaskData[] = [
   {
     title: 'Short Title',
     description: 'This is a short description.',
-    imageSrc: 'https://habrastorage.org/r/w1560/webt/ax/cg/id/axcgidsa8fghreeuyvbhfpga6yo.png',
+    imageSrc: 'src/assets/taskImg/taskImg1.jpg',
     imageWidth: 842,
     imageHeight: 720,
     imageAlt: 'Nature image',
@@ -71,7 +71,7 @@ const mockTaskData: ITaskData[] = [
       'A Much Longer Title That Spans Multiple Lines to Test Text Wrapping',
     description:
       'This description is a bit longer and is meant to test how the component handles larger amounts of text. It should wrap correctly and not overflow the container.',
-    imageSrc: 'https://habrastorage.org/r/w1560/webt/a3/9x/67/a39x67wkxdmcyzj-it5m2jmfxgg.png',
+    imageSrc: 'src/assets/taskImg/taskImg2.jpg',
     imageWidth: 856,
     imageHeight: 438,
     imageAlt: 'Cityscape image',
@@ -81,7 +81,7 @@ const mockTaskData: ITaskData[] = [
     title: 'Medium Title',
     description:
       'This is a medium-length description that provides more detail about the content.',
-    imageSrc: 'https://habrastorage.org/r/w1560/webt/yd/xe/tn/ydxetnfghjtfuex_p-em8v4emck.png',
+    imageSrc: 'src/assets/taskImg/taskImg3.jpg',
     imageWidth: 1070,
     imageHeight: 720,
     imageAlt: 'Forest image',
@@ -91,7 +91,7 @@ const mockTaskData: ITaskData[] = [
     title: 'Short Title',
     description:
       'This is a very long description that is intended to test how the component handles a large amount of text. The description should wrap within the container and not cause any layout issues. This is particularly important for ensuring that the UI remains consistent and readable, even when dealing with unexpected or edge-case content.',
-    imageSrc: 'https://habrastorage.org/r/w1560/webt/t-/4k/ys/t-4kyszb4grfafbi7lazyyvq6dy.png',
+    imageSrc: 'src/assets/taskImg/taskImg4.jpg',
     imageWidth: 1066,
     imageHeight: 570,
     imageAlt: 'Mountain image',
@@ -100,7 +100,7 @@ const mockTaskData: ITaskData[] = [
   {
     title: 'Another Title',
     description: 'A short description.',
-    imageSrc: 'https://habrastorage.org/r/w1560/webt/r6/07/q7/r607q7hehfjmuicf0_icntddk2s.png',
+    imageSrc: 'src/assets/taskImg/taskImg5.jpg',
     imageWidth: 1038,
     imageHeight: 608,
     imageAlt: 'Ocean image',
