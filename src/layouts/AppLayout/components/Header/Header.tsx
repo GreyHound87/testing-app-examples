@@ -59,10 +59,9 @@ export const Header: React.FC = () => {
           </div>
         </GridColumn>
       </GridRow>
-
       <GridRow>
         <GridColumn xs={4} s={8} m={12} l={12} xl={12} xxl={12}>
-          <Divider marginTop={8} marginBottom={16} />
+          <Divider marginTop={20} marginBottom={20} />
         </GridColumn>
       </GridRow>
     </>
