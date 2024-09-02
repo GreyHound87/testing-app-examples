@@ -1,15 +1,17 @@
 import React from 'react'
-/* import { Link } from '@hh.ru/magritte-ui' */
+import { Link as MagritteLink } from '@hh.ru/magritte-ui';
 import { Link } from 'react-router-dom'
 
 export const StartPage = () => (
   <div>
     StartPage Content
     <Link to="/testing">
-      Link to test
+    <MagritteLink style="accent" typography="label-2-regular">Link to test</MagritteLink>
+      
     </Link>{' '}
     <Link to="/result">
-      Link to result
+    <MagritteLink style="positive" typography="label-2-regular">Link to result</MagritteLink>
+      
     </Link>
   </div>
 )
