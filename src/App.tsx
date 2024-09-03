@@ -11,12 +11,7 @@ import { TaskCard } from './components/TaskCard/TaskCard'
 const ResultPage = () => (
   <div>
     ResultPage Content
-    <Link to="/">
-      Link to start
-    </Link>{' '}
-    <Link to="/testing">
-      Link to test
-    </Link>
+    <Link to="/">Link to start</Link> <Link to="/testing">Link to test</Link>
   </div>
 )
 

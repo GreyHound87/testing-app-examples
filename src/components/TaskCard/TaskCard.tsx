@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Card, Button, Divider } from '@hh.ru/magritte-ui'
+import { Card, Divider } from '@hh.ru/magritte-ui'
 
 import { TaskContent } from './TaskContent'
 import { AnswerField } from './AnswerField'
@@ -7,7 +7,6 @@ import { TaskType, ITaskData } from '../../types/TaskType'
 
 export const TaskCard: React.FC = () => {
   const [currentTaskIndex, setCurrentTaskIndex] = useState(0)
-
   const handleNextTask = () => {
     setCurrentTaskIndex((prevIndex) => (prevIndex + 1) % mockTaskData.length)
   }
@@ -41,17 +40,7 @@ export const TaskCard: React.FC = () => {
         imageAlt={imageAlt}
       />
       <Divider marginTop={20} marginBottom={20} />
-      <AnswerField taskType={taskType} />
-      <Divider marginTop={20} marginBottom={20} />
-      <Button
-        size="small"
-        mode="primary"
-        style="accent"
-        type="submit"
-        onClick={handleNextTask}
-      >
-        Ответить
-      </Button>
+      <AnswerField taskType={taskType} onNextTask={handleNextTask} />
     </Card>
   )
 }

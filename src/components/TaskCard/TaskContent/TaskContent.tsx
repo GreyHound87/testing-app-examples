@@ -39,7 +39,7 @@ export const TaskContent: React.FC<ITaskContentProps> = ({
           style={{
             aspectRatio: aspectRatio,
             maxHeight: window.innerHeight * 0.4,
-            margin: "auto"
+            margin: 'auto',
           }}
         >
           <img
