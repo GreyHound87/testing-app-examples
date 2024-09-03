@@ -13,6 +13,11 @@ import {
 } from '@hh.ru/magritte-ui'
 import { TaskType } from '../../../types/TaskType'
 
+interface AnswerFieldProps {
+  taskType: TaskType;
+  onNextTask: () => void;
+}
+
 
 export const AnswerField: React.FC<AnswerFieldProps> = ({
   taskType,
