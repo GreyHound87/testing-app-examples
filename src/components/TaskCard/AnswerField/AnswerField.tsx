@@ -14,10 +14,9 @@ import {
 import { TaskType } from '../../../types/TaskType'
 
 interface AnswerFieldProps {
-  taskType: TaskType;
-  onNextTask: () => void;
+  taskType: TaskType
+  onNextTask: () => void
 }
-
 
 export const AnswerField: React.FC<AnswerFieldProps> = ({
   taskType,
@@ -54,8 +53,6 @@ export const AnswerField: React.FC<AnswerFieldProps> = ({
     }
     return true
   }
-
-
 
   return (
     <>

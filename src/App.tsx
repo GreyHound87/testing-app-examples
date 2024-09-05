@@ -3,7 +3,15 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 /* import { Link } from '@hh.ru/magritte-ui'
  */
 import { AppLayout } from './layouts'
-import { StartPage } from './pages'
+import {
+  DragAndDropDemoPage,
+  NumberedListDemoPage,
+  PairMatchingDemoPage,
+  PairMatchingDemoPage2,
+  PairMatchingDemoPage3,
+  PairMatchingDemoPage4,
+  StartPage,
+} from './pages'
 
 import { TaskCard } from './components/TaskCard/TaskCard'
 
@@ -27,6 +35,27 @@ export const App: React.FC = () => {
                 <Route path="/" element={<StartPage />} />
                 <Route path="/testing" element={<TaskCard />} />
                 <Route path="/result" element={<ResultPage />} />
+                <Route path="/drag-n-drop" element={<DragAndDropDemoPage />} />
+                <Route
+                  path="/drag-n-drop-2"
+                  element={<NumberedListDemoPage />}
+                />
+                <Route
+                  path="/drag-n-drop-3"
+                  element={<PairMatchingDemoPage />}
+                />
+                <Route
+                  path="/drag-n-drop-4"
+                  element={<PairMatchingDemoPage2 />}
+                />
+                <Route
+                  path="/drag-n-drop-5"
+                  element={<PairMatchingDemoPage3 />}
+                />
+                <Route
+                  path="/drag-n-drop-6"
+                  element={<PairMatchingDemoPage4 />}
+                />
               </Routes>
             </AppLayout>
           }

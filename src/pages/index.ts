@@ -1,1 +1,7 @@
 export { StartPage } from './StartPage'
+export { DragAndDropDemoPage } from './DragAndDropDemoPage'
+export { NumberedListDemoPage } from './NumberedListDemoPage'
+export { PairMatchingDemoPage } from './PairMatchingDemoPage'
+export { PairMatchingDemoPage2 } from './PairMatchingDemoPage2'
+export { PairMatchingDemoPage3 } from './PairMatchingDemoPage3'
+export { PairMatchingDemoPage4 } from './PairMatchingDemoPage4'
