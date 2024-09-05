@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Link as MagritteLink } from '@hh.ru/magritte-ui'
 import { Link } from 'react-router-dom'
-
 import {
   Divider,
   VSpacingContainer,
@@ -21,6 +20,12 @@ const ItemType = 'ANSWER'
 interface DragItem {
   id: string
   content: string
+}
+
+interface Category {
+  id: string
+  category: string
+  answer: string | null
 }
 
 const DraggableAnswer: React.FC<{
@@ -95,7 +100,7 @@ const Category: React.FC<{
 }
 
 export const PairMatchingDemoPage: React.FC = () => {
-  const [categories, setCategories] = useState([
+  const [categories, setCategories] = useState<Category[]>([
     { id: '1', category: 'Фронтенд', answer: null },
     { id: '2', category: 'Бэкенд', answer: null },
     { id: '3', category: 'Дизайн', answer: null },

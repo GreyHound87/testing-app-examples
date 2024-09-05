@@ -1,35 +1,40 @@
-import React, { useState } from 'react';
-import { Link as MagritteLink } from '@hh.ru/magritte-ui';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react'
+import { Link as MagritteLink } from '@hh.ru/magritte-ui'
+import { Link } from 'react-router-dom'
 import {
   Divider,
   VSpacingContainer,
   LoadingContextProvider,
   Text,
-} from '@hh.ru/magritte-ui';
-import { DndProvider, useDrag, useDrop } from 'react-dnd';
-import { HTML5Backend } from 'react-dnd-html5-backend';
-import { TouchBackend } from 'react-dnd-touch-backend';
+} from '@hh.ru/magritte-ui'
+import { DndProvider, useDrag, useDrop } from 'react-dnd'
+import { HTML5Backend } from 'react-dnd-html5-backend'
+import { TouchBackend } from 'react-dnd-touch-backend'
 
 const isTouchDevice = () => {
-  return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-};
+  return 'ontouchstart' in window || navigator.maxTouchPoints > 0
+}
 
-const ItemType = 'ANSWER';
+const ItemType = 'ANSWER'
 
 interface DragItem {
-  id: string;
-  content: string;
+  id: string
+  content: string
+}
+
+interface Slot {
+  id: string
+  answer: DragItem | null
 }
 
 const DraggableAnswer: React.FC<{
-  id: string;
-  content: string;
+  id: string
+  content: string
 }> = ({ id, content }) => {
   const [, drag] = useDrag({
     type: ItemType,
     item: { id, content },
-  });
+  })
 
   return (
     <span
@@ -46,19 +51,19 @@ const DraggableAnswer: React.FC<{
     >
       {content}
     </span>
-  );
-};
+  )
+}
 
 const Slot: React.FC<{
-  id: string;
-  answer: DragItem | null;
-  onDrop: (item: DragItem) => void;
-  onRemove: () => void;
+  id: string
+  answer: DragItem | null
+  onDrop: (item: DragItem) => void
+  onRemove: () => void
 }> = ({ id, answer, onDrop, onRemove }) => {
   const [, drop] = useDrop({
     accept: ItemType,
     drop: (item: DragItem) => onDrop(item),
-  });
+  })
 
   return (
     <span
@@ -98,29 +103,29 @@ const Slot: React.FC<{
         <span style={{ color: '#999' }}>Слот</span>
       )}
     </span>
-  );
-};
+  )
+}
 
 export const PairMatchingDemoPage4: React.FC = () => {
-  const [slots, setSlots] = useState([
+  const [slots, setSlots] = useState<Slot[]>([
     { id: '1', answer: null },
     { id: '2', answer: null },
     { id: '3', answer: null },
     { id: '4', answer: null },
-  ]);
+  ])
 
-  const [answers, setAnswers] = useState([
+  const [answers, setAnswers] = useState<DragItem[]>([
     { id: '5', content: 'React' },
     { id: '6', content: 'Node.js' },
     { id: '7', content: 'Figma' },
     { id: '8', content: 'Jest' },
-  ]);
+  ])
 
   const handleDrop = (slotId: string, item: DragItem) => {
     // Проверяем, не занят ли слот уже другим элементом
-    const slot = slots.find((slot) => slot.id === slotId);
+    const slot = slots.find((slot) => slot.id === slotId)
     if (slot && slot.answer) {
-      return; // Если слот уже занят, не делаем ничего
+      return // Если слот уже занят, не делаем ничего
     }
 
     // Обновляем состояние слотов
@@ -128,28 +133,28 @@ export const PairMatchingDemoPage4: React.FC = () => {
       prevSlots.map((slot) =>
         slot.id === slotId ? { ...slot, answer: item } : slot
       )
-    );
+    )
 
     // Удаляем элемент из списка доступных ответов
     setAnswers((prevAnswers) =>
       prevAnswers.filter((answer) => answer.id !== item.id)
-    );
-  };
+    )
+  }
 
   const handleRemove = (slotId: string) => {
-    const slot = slots.find((slot) => slot.id === slotId);
+    const slot = slots.find((slot) => slot.id === slotId)
     if (slot && slot.answer) {
       // Возвращаем элемент обратно в список доступных ответов
-      setAnswers((prevAnswers) => [...prevAnswers, slot.answer!]);
+      setAnswers((prevAnswers) => [...prevAnswers, slot.answer!])
 
       // Очищаем слот
       setSlots((prevSlots) =>
         prevSlots.map((slot) =>
           slot.id === slotId ? { ...slot, answer: null } : slot
         )
-      );
+      )
     }
-  };
+  }
 
   return (
     <DndProvider backend={isTouchDevice() ? TouchBackend : HTML5Backend}>
@@ -176,17 +181,39 @@ export const PairMatchingDemoPage4: React.FC = () => {
               }}
             >
               <Text>
-                Эта демоверсия позволяет заполнить слоты элементами. Перетащите элемент в соответствующий слот.
+                Эта демоверсия позволяет заполнить слоты элементами. Перетащите
+                элемент в соответствующий слот.
               </Text>
               <Divider marginTop={20} marginBottom={20} />
               <Text>
-                Например, вы можете перетащить <Slot id="1" answer={slots[1].answer} onDrop={(item) => handleDrop('1', item)} onRemove={() => handleRemove('1')} /> сюда, или <Slot id="2" answer={slots[2].answer} onDrop={(item) => handleDrop('2', item)} onRemove={() => handleRemove('2')} /> сюда.
+                Например, вы можете перетащить{' '}
+                <Slot
+                  id="1"
+                  answer={slots[1].answer}
+                  onDrop={(item) => handleDrop('1', item)}
+                  onRemove={() => handleRemove('1')}
+                />{' '}
+                сюда, или{' '}
+                <Slot
+                  id="2"
+                  answer={slots[2].answer}
+                  onDrop={(item) => handleDrop('2', item)}
+                  onRemove={() => handleRemove('2')}
+                />{' '}
+                сюда.
               </Text>
             </div>
 
             <Divider marginTop={20} marginBottom={20} />
 
-            <div style={{ display: 'flex', flexDirection: 'row', gap: '16px', flexWrap: 'wrap' }}>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                gap: '16px',
+                flexWrap: 'wrap',
+              }}
+            >
               {answers.map((answer) => (
                 <DraggableAnswer
                   key={answer.id}
@@ -204,5 +231,5 @@ export const PairMatchingDemoPage4: React.FC = () => {
         </MagritteLink>
       </Link>
     </DndProvider>
-  );
-};
+  )
+}
