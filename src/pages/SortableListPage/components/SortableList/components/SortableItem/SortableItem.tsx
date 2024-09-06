@@ -26,7 +26,7 @@ const SortableItemContext = createContext<Context>({
   ref() {},
 })
 
-export function SortableItem({ children, id, index }: PropsWithChildren<Props>) {
+export function SortableItem({ children, id }: PropsWithChildren<Props>) {
   const {
     attributes,
     isDragging,
