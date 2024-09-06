@@ -1,11 +1,23 @@
 import React, { useState } from 'react'
-import { Card, Divider, Text, VSpacingContainer } from '@hh.ru/magritte-ui'
+import {
+  Card,
+  Divider,
+  Text,
+  VSpacingContainer,
+  Button,
+} from '@hh.ru/magritte-ui'
 
 import { SortableList } from './components/SortableList'
 import './SortableListPage.css'
 
 function getMockItems() {
-  return [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }]
+  return [
+    { id: 'print(1)' },
+    { id: 'print(2)' },
+    { id: 'print(3)' },
+    { id: 'print(4)' },
+    { id: 'print(5)' },
+  ]
 }
 const title = 'Задание: Упорядочить выводы в консоль'
 const description =
@@ -62,7 +74,11 @@ export function SortableListPage() {
             </SortableList.Item>
           )}
         />
+        <Divider marginTop={20} marginBottom={20} />
       </VSpacingContainer>
+      <Button mode="primary" style="accent" type="submit" size="large">
+        Ответить
+      </Button>
     </Card>
   )
 }

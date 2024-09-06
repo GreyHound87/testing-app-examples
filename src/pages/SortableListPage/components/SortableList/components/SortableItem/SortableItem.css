@@ -10,11 +10,11 @@
     0 1px calc(3px / var(--scale-x, 1)) 0 rgba(34, 33, 81, 0.15);
   border-radius: calc(4px / var(--scale-x, 1));
   box-sizing: border-box;
-  list-style: none;
   color: #333;
   font-weight: 400;
   font-size: 1rem;
   font-family: sans-serif;
+  max-width: 400px; /* Limit the width */
 }
 
 .DragHandle {

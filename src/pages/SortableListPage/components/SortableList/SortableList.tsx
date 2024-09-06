@@ -17,6 +17,7 @@ import {
 import './SortableList.css'
 
 import { DragHandle, SortableItem, SortableOverlay } from './components'
+import { VSpacingContainer } from '@hh.ru/magritte-ui'
 
 interface BaseItem {
   id: UniqueIdentifier
@@ -65,11 +66,11 @@ export function SortableList<T extends BaseItem>({
       }}
     >
       <SortableContext items={items}>
-        <ol className="SortableList" role="application">
+        <VSpacingContainer default={12}>
           {items.map((item) => (
             <React.Fragment key={item.id}>{renderItem(item)}</React.Fragment>
           ))}
-        </ol>
+        </VSpacingContainer>
       </SortableContext>
       <SortableOverlay>
         {activeItem ? renderItem(activeItem) : null}

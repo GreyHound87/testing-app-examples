@@ -6,6 +6,7 @@ import type {
 } from '@dnd-kit/core'
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
+import { ArrowsCrossOutlinedSize24 } from '@hh.ru/magritte-ui/icon'
 
 import './SortableItem.css'
 
@@ -25,7 +26,7 @@ const SortableItemContext = createContext<Context>({
   ref() {},
 })
 
-export function SortableItem({ children, id }: PropsWithChildren<Props>) {
+export function SortableItem({ children, id, index }: PropsWithChildren<Props>) {
   const {
     attributes,
     isDragging,
@@ -51,9 +52,9 @@ export function SortableItem({ children, id }: PropsWithChildren<Props>) {
 
   return (
     <SortableItemContext.Provider value={context}>
-      <li className="SortableItem" ref={setNodeRef} style={style}>
-        {children}
-      </li>
+      <div className="SortableItem" ref={setNodeRef} style={style}>
+      {children}
+      </div>
     </SortableItemContext.Provider>
   )
 }
@@ -63,9 +64,11 @@ export function DragHandle() {
 
   return (
     <button className="DragHandle" {...attributes} {...listeners} ref={ref}>
-      <svg viewBox="0 0 20 20" width="12">
-        <path d="M7 2a2 2 0 1 0 .001 4.001A2 2 0 0 0 7 2zm0 6a2 2 0 1 0 .001 4.001A2 2 0 0 0 7 8zm0 6a2 2 0 1 0 .001 4.001A2 2 0 0 0 7 14zm6-8a2 2 0 1 0-.001-4.001A2 2 0 0 0 13 6zm0 2a2 2 0 1 0 .001 4.001A2 2 0 0 0 13 8zm0 6a2 2 0 1 0 .001 4.001A2 2 0 0 0 13 14z"></path>
-      </svg>
+      <ArrowsCrossOutlinedSize24
+        initial="positive"
+        highlighted="positive-secondary"
+        aria-label="Перемещение"
+      />
     </button>
   )
 }
