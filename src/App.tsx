@@ -10,6 +10,7 @@ import {
   PairMatchingDemoPage2,
   PairMatchingDemoPage3,
   PairMatchingDemoPage4,
+  SortableListPage,
   StartPage,
 } from './pages'
 
@@ -56,6 +57,7 @@ export const App: React.FC = () => {
                   path="/drag-n-drop-6"
                   element={<PairMatchingDemoPage4 />}
                 />
+                <Route path="/drag-n-drop-7" element={<SortableListPage />} />
               </Routes>
             </AppLayout>
           }

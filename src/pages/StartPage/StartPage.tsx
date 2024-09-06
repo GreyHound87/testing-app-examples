@@ -45,5 +45,10 @@ export const StartPage = () => (
         Link to Drag'n'Drop Demo #6
       </MagritteLink>
     </Link>
+    <Link to="/drag-n-drop-7">
+      <MagritteLink style="neutral" typography="label-2-regular">
+        Link to Drag'n'Drop Demo #7
+      </MagritteLink>
+    </Link>
   </div>
 )

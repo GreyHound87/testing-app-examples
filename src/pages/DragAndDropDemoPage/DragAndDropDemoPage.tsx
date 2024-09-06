@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Link as MagritteLink } from '@hh.ru/magritte-ui'
 import { Link } from 'react-router-dom'
-
 import {
   Divider,
   VSpacingContainer,
@@ -32,6 +31,10 @@ const DraggableCard: React.FC<{
   const [, ref] = useDrag({
     type: ItemType,
     item: { id, index },
+    end: () => {
+      // Включаем скролл после завершения перетаскивания
+      document.body.classList.remove('no-scroll')
+    },
   })
 
   const [, drop] = useDrop({
@@ -52,10 +55,11 @@ const DraggableCard: React.FC<{
         marginBottom: 8,
         backgroundColor: '#f0f0f0',
         borderRadius: 8,
-        minWidth: 100, // Минимальная ширина для элементов
-        maxWidth: 200, // Максимальная ширина для элементов
+        minWidth: 100,
+        maxWidth: 200,
         textAlign: 'center',
-        width: '100%', // Элементы занимают всю доступную ширину до maxWidth
+        width: '100%',
+        touchAction: 'none', // Отключаем скролл на перетаскиваемых элементах
       }}
     >
       {content}
@@ -72,6 +76,9 @@ const NumberedDraggableCard: React.FC<{
   const [, ref] = useDrag({
     type: ItemType,
     item: { id, index },
+    end: () => {
+      document.body.classList.remove('no-scroll')
+    },
   })
 
   const [, drop] = useDrop({
@@ -92,12 +99,13 @@ const NumberedDraggableCard: React.FC<{
         marginBottom: 8,
         backgroundColor: '#f0f0f0',
         borderRadius: 8,
-        minWidth: 100, // Минимальная ширина для элементов
-        maxWidth: 200, // Максимальная ширина для элементов
+        minWidth: 100,
+        maxWidth: 200,
         textAlign: 'center',
-        width: '100%', // Элементы занимают всю доступную ширину до maxWidth
+        width: '100%',
         display: 'flex',
         alignItems: 'center',
+        touchAction: 'none', // Отключаем скролл на перетаскиваемых элементах
       }}
     >
       <span style={{ marginRight: 8 }}>{index + 1}.</span>
@@ -171,7 +179,10 @@ export const DragAndDropDemoPage: React.FC = () => {
   }
 
   return (
-    <DndProvider backend={isTouchDevice() ? TouchBackend : HTML5Backend}>
+    <DndProvider
+      backend={isTouchDevice() ? TouchBackend : HTML5Backend}
+      options={{ enableMouseEvents: true }}
+    >
       <VSpacingContainer default={24}>
         <LoadingContextProvider loading={true}>
           {/* Вертикальная демоверсия */}
