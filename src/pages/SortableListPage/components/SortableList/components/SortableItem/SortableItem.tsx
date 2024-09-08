@@ -53,7 +53,7 @@ export function SortableItem({ children, id }: PropsWithChildren<Props>) {
   return (
     <SortableItemContext.Provider value={context}>
       <div className="SortableItem" ref={setNodeRef} style={style}>
-      {children}
+        {children}
       </div>
     </SortableItemContext.Provider>
   )

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
  */
 import { AppLayout } from './layouts'
 import {
+  BoardSectionListPage,
   DragAndDropDemoPage,
   NumberedListDemoPage,
   PairMatchingDemoPage,
@@ -58,6 +59,10 @@ export const App: React.FC = () => {
                   element={<PairMatchingDemoPage4 />}
                 />
                 <Route path="/drag-n-drop-7" element={<SortableListPage />} />
+                <Route
+                  path="/drag-n-drop-8"
+                  element={<BoardSectionListPage />}
+                />
               </Routes>
             </AppLayout>
           }
