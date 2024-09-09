@@ -1,0 +1,10 @@
+.droppable {
+  box-sizing: border-box;
+  min-height: 30px;
+  height: fit-content;
+  margin: 5px;
+  padding: 0 5px; /* Изменим padding-left на padding для равномерного отступа */
+  user-select: none;
+  min-width: 150px;
+  display: inline-block;
+}

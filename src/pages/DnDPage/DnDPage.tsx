@@ -9,13 +9,13 @@ import {
 import { Link as MagritteLink } from '@hh.ru/magritte-ui'
 import { Link } from 'react-router-dom'
 
-import BoardSectionList from './components/BoardSectionList'
+import DnDAnswer from './components/DnDAnswer/DnDAnswer'
 
 const title = 'Задание: Упорядочить выводы в консоль'
 const description =
   'Рассмотрите следующий код. Ваша задача — расположить выводы в консоль в правильной последовательности.'
 
-export function BoardSectionListPage() {
+export function DnDPage() {
   return (
     <Card
       padding={16}
@@ -54,8 +54,8 @@ export function BoardSectionListPage() {
           </VSpacingContainer>
         </Card>
         <Divider marginTop={20} marginBottom={20} />
-        <BoardSectionList />
-        <Divider marginTop={20} marginBottom={20} />
+        <DnDAnswer />
+        <Divider marginTop={100} marginBottom={20} />
       </VSpacingContainer>
       <Button mode="primary" style="accent" type="submit" size="large">
         Ответить

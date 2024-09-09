@@ -1,0 +1,13 @@
+.droppable {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Центрирование содержимого по горизонтали */
+  box-sizing: border-box;
+  height: 30px;
+  margin: 5px;
+  padding: 0 5px; /* Изменим padding-left на padding для равномерного отступа */
+  user-select: none;
+  list-style-type: none;
+  min-width: 150px;
+  flex-wrap: wrap;
+}

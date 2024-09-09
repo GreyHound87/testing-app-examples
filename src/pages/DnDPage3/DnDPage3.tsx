@@ -9,13 +9,13 @@ import {
 import { Link as MagritteLink } from '@hh.ru/magritte-ui'
 import { Link } from 'react-router-dom'
 
-import BoardSectionList from './components/BoardSectionList'
+import DnDAnswer from './components/DnDAnswer/DnDAnswer'
 
-const title = 'Задание: Упорядочить выводы в консоль'
+const title = 'Задание: Заполнение пропусков в тексте'
 const description =
-  'Рассмотрите следующий код. Ваша задача — расположить выводы в консоль в правильной последовательности.'
+  'Ваша задача — Заполнить пропуски в следующем тексте, используя предоставленные варианты.'
 
-export function BoardSectionListPage() {
+export function DnDPage3() {
   return (
     <Card
       padding={16}
@@ -37,25 +37,11 @@ export function BoardSectionListPage() {
           <VSpacingContainer default={12}>
             <Text typography="subtitle-1-semibold">{title}</Text>
             <Text typography="paragraph-1-regular">{description}</Text>
-            <div
-              style={{
-                aspectRatio: 1 / 1,
-
-                maxHeight: window.innerHeight * 0.4,
-                margin: 'auto',
-              }}
-            >
-              <img
-                src="/assets/taskImg/taskImg6.jpg"
-                alt="Image"
-                style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
-              />
-            </div>
           </VSpacingContainer>
         </Card>
         <Divider marginTop={20} marginBottom={20} />
-        <BoardSectionList />
-        <Divider marginTop={20} marginBottom={20} />
+        <DnDAnswer />
+        <Divider marginTop={100} marginBottom={20} />
       </VSpacingContainer>
       <Button mode="primary" style="accent" type="submit" size="large">
         Ответить

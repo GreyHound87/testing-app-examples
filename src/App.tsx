@@ -13,6 +13,9 @@ import {
   PairMatchingDemoPage4,
   SortableListPage,
   StartPage,
+  DnDPage,
+  DnDPage2,
+  DnDPage3,
 } from './pages'
 
 import { TaskCard } from './components/TaskCard/TaskCard'
@@ -63,6 +66,9 @@ export const App: React.FC = () => {
                   path="/drag-n-drop-8"
                   element={<BoardSectionListPage />}
                 />
+                <Route path="/drag-n-drop-9" element={<DnDPage />} />
+                <Route path="/drag-n-drop-10" element={<DnDPage2 />} />
+                <Route path="/drag-n-drop-11" element={<DnDPage3 />} />
               </Routes>
             </AppLayout>
           }
